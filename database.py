@@ -9,6 +9,7 @@ def student_database():
     print("Press 2 for entering new Data..")
     print("press 3 for adding new column to  table..")
     print("press 4 for modifying data in table")
+    print("press 5  for deleting details of employee: ")
     value = int(input())
     db = pymysql.connect(host='localhost', database=storage, user='', passwd='')
     cursor = db.cursor()
@@ -40,6 +41,7 @@ def student_database():
         cursor.execute('Alter table ' + table + ' add  %s VARCHAR(10)' %column_name)
         db.commit()
         print("column Added successfully")
+        
     elif value == 4:
         field_name = input("enter field name to be updated :")
         new_value = input("Please enter your new value")
@@ -48,6 +50,13 @@ def student_database():
         cursor.execute('update employee set ' + field_name+ ' = '+ new_value+' WHERE '+ reference_name+' = '+reference_value)
         db.commit()
         print("data modified succesfully    ")
+
+    elif value == 5:
+        sno = input("enter employee number to be deleted :")
+        reference_name = input("enter reference column name :")
+        cursor.execute('DELETE FROM '+table + ' WHERE ' + reference_name + ' = '+sno)
+        db.commit()
+        print('Data From Row no : ' + sno + ' Deleted Successfully')    
 
 while(True):
 
