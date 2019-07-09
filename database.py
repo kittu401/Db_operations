@@ -29,8 +29,9 @@ def student_database():
         salary = input("Enter salary amount: ")
         no = input("Enter number")
         sno = input("enter serial number")
+        aadhar = input("Enter Your Aadhra number :")
         # query for adding data into table
-        cursor.execute('INSERT INTO ' + table + ' VALUES (%s, %s, %s, %s, %s, %s, %s)', (first, last, age, sex, salary, no, sno))
+        cursor.execute('INSERT INTO ' + table + ' VALUES (%s, %s, %s, %s, %s, %s, %s, %s)', (first, last, age, sex, salary, no, sno,aadhar))
         db.commit()
         print("Data entered Succesfully")
 
@@ -41,7 +42,7 @@ def student_database():
         cursor.execute('Alter table ' + table + ' add  %s VARCHAR(10)' %column_name)
         db.commit()
         print("column Added successfully")
-        
+
     elif value == 4:
         field_name = input("enter field name to be updated :")
         new_value = input("Please enter your new value")
