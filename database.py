@@ -45,7 +45,7 @@ def student_database():
         new_value = input("Please enter your new value")
         reference_name = input("enter reference column name :")
         reference_value = input("enter reference value :")
-        cursor.execute("update employee set %s = %s WHERE %s = %s" % (field_name, new_value, reference_name, reference_value))
+        cursor.execute('update employee set ' + field_name+ ' = '+ new_value+' WHERE '+ reference_name+' = '+reference_value)
         db.commit()
         print("data modified succesfully    ")
 
