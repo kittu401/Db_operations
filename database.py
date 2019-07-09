@@ -27,8 +27,9 @@ def student_database():
         sex = input("Enter Sex: ")
         salary = input("Enter salary amount: ")
         no = input("Enter number")
+        sno = input("enter serial number")
         # query for adding data into table
-        cursor.execute('INSERT INTO ' + table + ' VALUES (%s, %s, %s, %s, %s, %s)', (first, last, age, sex, salary, no))
+        cursor.execute('INSERT INTO ' + table + ' VALUES (%s, %s, %s, %s, %s, %s, %s)', (first, last, age, sex, salary, no, sno))
         db.commit()
         print("Data entered Succesfully")
 
