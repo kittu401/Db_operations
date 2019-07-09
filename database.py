@@ -37,7 +37,7 @@ def student_database():
         print("Enter column name to be added")
         column_name = input("enter new column name")
         #query for adding new column in existing table
-        cursor.execute("Alter table employee add %s VARCHAR(10)" %column_name)
+        cursor.execute('Alter table ' + table + ' add  %s VARCHAR(10)' %column_name)
         db.commit()
         print("column Added successfully")
     elif value == 4:
