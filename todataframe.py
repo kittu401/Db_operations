@@ -9,4 +9,7 @@ def to_dataframe():
     table = input("Enter your table name")
     query = pd.read_sql('SELECT * FROM ' + table, db)
     print(query)
+    f = open("TO_DataFrame.txt","w+")
+    f.write(str(query))
+    f.close()
 
